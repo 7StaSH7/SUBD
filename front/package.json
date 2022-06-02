@@ -1,0 +1,37 @@
+{
+  "name": "lab1",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev-docker": "next dev",
+    "dev": "npm run open && next dev",
+    "build": "next build",
+    "open": "start http://localhost:3000",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "next": "12",
+    "next-cookies": "^2.0.3",
+    "primeflex": "^3.1.3",
+    "primeicons": "^5.0.0",
+    "primereact": "^8.0.0-rc.1",
+    "pusher": "^5.0.1",
+    "pusher-js": "^7.0.6",
+    "react": "^17.0.2",
+    "react-context-hook": "^3.0.7",
+    "react-dom": "^17.0.2",
+    "react-loading-skeleton": "^3.0.3",
+    "react-spinners": "^0.11.0",
+    "react-transition-group": "^4.4.2",
+    "swr": "^1.2.2"
+  },
+  "devDependencies": {
+    "eslint": "8.10.0",
+    "eslint-config-next": "12.1.0"
+  },
+  "main": "index.js",
+  "author": "Aleksandr <sanchasyo@mail.ru>",
+  "license": "MIT"
+}
