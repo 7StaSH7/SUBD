@@ -15,11 +15,19 @@ export class UpdateRouteParams {
   busId?: number;
 }
 
-export const getRoutes = async () => {
+export const getRoutes = async (filter: string) => {
   const routeRep = getRepository(Route);
-  const routes = await routeRep.find({ relations: ["bus"] });
+  let routes = routeRep
+    .createQueryBuilder("route")
+    .leftJoinAndSelect("route.bus", "bus");
+
+  if (filter.startsWith("-")) routes.orderBy(filter.slice(1), "DESC");
+  else routes.orderBy(filter, "ASC");
+
+  const result = await routes.getMany();
+
   return Promise.all(
-    routes.map(async (route) => {
+    result.map(async (route) => {
       return {
         ...route,
         start: route.start.toLocaleString("ru-RU"),

@@ -6,6 +6,7 @@
   Param,
   Put,
   Delete,
+  QueryParam,
 } from "routing-controllers";
 import {
   createRoute,
@@ -20,9 +21,9 @@ import {
 @JsonController("/routes")
 export class RouteController {
   @Get("")
-  async getRoutes() {
+  async getRoutes(@QueryParam("filter") filter: string,) {
     return {
-      result: await getRoutes(),
+      result: await getRoutes(filter),
     };
   }
   @Post("")

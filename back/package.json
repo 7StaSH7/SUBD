@@ -36,7 +36,6 @@
     "js-joda": "^1.11.0",
     "js-yaml": "^4.1.0",
     "json-refs": "^3.0.15",
-    "json2xls": "^0.1.2",
     "jsonwebtoken": "^8.5.1",
     "let": "^0.0.2",
     "log4js": "^6.3.0",
