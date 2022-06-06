@@ -15,10 +15,10 @@ export class Route {
   @Column({ type: "text", nullable: false })
   name!: string;
 
-  @Column({ type: "date", nullable: false })
+  @Column({ type: "timestamptz", nullable: false })
   start!: Date;
 
-  @Column({ type: "date", nullable: false })
+  @Column({ type: "timestamptz", nullable: false })
   end!: Date;
 
   @ManyToOne(() => Bus, (bus) => bus.routes)

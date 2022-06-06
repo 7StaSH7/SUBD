@@ -12,6 +12,7 @@ import {
   CreateRouteParams,
   deleteRoute,
   getRoutes,
+  getRoutesByBusId,
   updateRoute,
   UpdateRouteParams,
 } from "src/services/route";
@@ -43,6 +44,12 @@ export class RouteController {
   async deleteRoute(@Param("id") id: number) {
     return {
       result: await deleteRoute(id),
+    };
+  }
+  @Get("/bus/:busId")
+  async getRoutesByBusId(@Param("busId") busid: number) {
+    return {
+      result: await getRoutesByBusId(busid),
     };
   }
 }
