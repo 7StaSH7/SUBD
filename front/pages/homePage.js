@@ -81,7 +81,7 @@ export default function HomePage() {
   });
 
   const generalReport = async () => {
-    const newData = await getRoutes();
+    const newData = await getRoutes("start");
     const dataToSave = newData.map((route) => {
       return {
         RouteName: route.name,
